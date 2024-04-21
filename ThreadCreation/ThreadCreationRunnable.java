@@ -2,17 +2,15 @@ package ThreadCreation;
 
 import java.util.concurrent.TimeUnit;
 
-public class ThreadCreationThread extends Thread {
-
+public class ThreadCreationRunnable implements Runnable {
     public static int count;
-    private final String idPrefix = "Thread-";
+    private final String idPrefix = "Runnable-";
     private String threadId;
 
-    public ThreadCreationThread() {
+    public ThreadCreationRunnable() {
         this.threadId = idPrefix + ++count;
     }
-
-    @Override
+    
     public void run() {
         System.out.println("[" + threadId + "] STARTED");
         try {
